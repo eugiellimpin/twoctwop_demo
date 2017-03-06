@@ -1,0 +1,2 @@
+class OneTwoThreeController < ApplicationController
+end

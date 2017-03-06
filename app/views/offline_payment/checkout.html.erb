@@ -1,0 +1,6 @@
+<%= form_tag({controller: 'offline_payment', action: 'pay', method: 'post'}, {id: '2c2p-payment-form'}) do %>
+  <input type="text" name="payer_name" value="eugie"><br/>
+  <input type="text" name="payer_email" value="eugie@email.com"><br/>
+  <input type="text" name="payer_mobile_number" value="09123123123"><br/>
+  <input type="submit" value="checkout">
+<% end %>

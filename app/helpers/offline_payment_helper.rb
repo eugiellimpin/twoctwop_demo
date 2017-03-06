@@ -1,0 +1,2 @@
+module OfflinePaymentHelper
+end
