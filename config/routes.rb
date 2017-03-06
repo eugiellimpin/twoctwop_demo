@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'credit_card_payment/checkout'
+
+  get 'credit_card_payment/pay'
+
   get 'one_two_three/checkout'
   post 'one_two_three/pay'
 
