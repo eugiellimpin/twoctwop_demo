@@ -73,11 +73,8 @@ module TwoctwopPaymentGatewayApi
     private
 
     def post
-      puts "========================= START ========================="
-      puts "sending request to #{@url}"
-      puts "=========================  END  ========================="
-
       @response = self.class.post(@url, body: @payload, headers: { 'Cookie' => cookies })
+
       store_cookies(@response.headers['Set-Cookie'])
       @response
     end

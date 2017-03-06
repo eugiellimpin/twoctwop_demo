@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'offline_payment#checkout'
+  root 'credit_card_payment#checkout'
 
   get 'credit_card_payment/checkout'
   post 'credit_card_payment/pay'
