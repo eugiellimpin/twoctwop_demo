@@ -1,24 +1,11 @@
 Rails.application.routes.draw do
-  get 'credit_card_payment/checkout'
-
-  get 'credit_card_payment/pay'
-
-  get 'one_two_three/checkout'
-  post 'one_two_three/pay'
-
   root 'offline_payment#checkout'
-  post 'test/pay'
 
-  get 'offline_payment/dashboard'
+  get 'credit_card_payment/checkout'
+  post 'credit_card_payment/pay'
+
   get 'offline_payment/checkout'
   post 'offline_payment/pay'
-
-  # callbacks
-  post 'test/frontend'
-  get 'test/frontend'
-  post 'test/backend'
-  get 'test/backend'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
