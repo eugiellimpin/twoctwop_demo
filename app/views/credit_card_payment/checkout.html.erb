@@ -1,2 +1,21 @@
-<h1>CreditCardPayment#checkout</h1>
-<p>Find me in app/views/credit_card_payment/checkout.html.erb</p>
+<%= form_tag({controller: 'credit_card_payment', action: 'pay', method: 'post'}, {id: '2c2p-payment-form'}) do %>
+  <input type="text" data-encrypt="cardnumber" maxlength="16" placeholder="Credit Card Number" value="4242424242424242"><br/>
+  <input type="text" name="card_holder_name" placeholder="Name on Credit Card" value="eugie"><br/>
+  <input type="text" name="card_holder_email" placeholder="Email" value="eugie@email.com"><br/>
+  <input type="text" name="card_issuer_bank" placeholder="Card Issuer Bank" value="metrobank"><br/>
+  <input type="text" data-encrypt="month" maxlength="2" placeholder="MM" value="12"><br/>
+  <input type="text" data-encrypt="year" maxlength="4" placeholder="YYYY" value="2020"><br/>
+  <input type="text" data-encrypt="cvv" maxlength="4" autocomplete="off" placeholder="CVV2/CVC2" value="123" ><br/>
+  <input type="button" value="checkout" onclick="checkout()">
+<% end %>
+
+<script type="text/javascript" src="https://demo2.2c2p.com/2C2PFrontEnd/SecurePayment/api/my2c2p.1.6.8.min.js"></script>
+<script type="text/javascript">
+  function checkout() {
+    console.log('checking out...');
+
+    My2c2p.submitForm("2c2p-payment-form", function(errCode, errDesc) {
+      console.log(errCode);
+    });
+  }
+</script>
