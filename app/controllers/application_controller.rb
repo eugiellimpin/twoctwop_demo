@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def secure_hash
     value = data.values.join
 
-    key = ENV['TWOCTWOP_SECRET_KEY', '']
+    key = ENV['TWOCTWOP_SECRET_KEY']
     digest = OpenSSL::Digest.new('SHA1')
     secure_hash = OpenSSL::HMAC.hexdigest(digest, key, value).upcase
 
